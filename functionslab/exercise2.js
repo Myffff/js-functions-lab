@@ -1,10 +1,11 @@
 fetch("https://jsonplaceholder.typicode.com/todos")
   .then(response => response.json())
   .then(json => {
-     const completed = null // Complete this code
-     completed.forEach( (todo, index) => {
-      console.log(`${todo.title} - ${todo.completed}`)
-    },200)
+     const completed = json // Complete this code
+     const complete = completed.map( todo => {
+        return todo.title
+      });
+      console.log(complete);
   })
   .catch(function(err) { 
     console.log(err);
